@@ -1,28 +1,35 @@
 <header class="site-header sticky-top">
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg py-2">
     <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="OHA Shop Home">
         <span class="brand-mark"><i class="fa-solid fa-leaf"></i></span>
-        <span>OHA Shop</span>
+        <span class="brand-name">OHA <span>Shop</span></span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Menu">
-        <i class="fa-solid fa-bars"></i>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu">
+        <i class="fa-solid fa-bars-staggered"></i>
       </button>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+      <div class="collapse navbar-collapse" id="desktopNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
           <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
           <li class="nav-item"><a class="nav-link" href="lifestyle.html">লাইফস্টাইল</a></li>
-          <li class="nav-item"><a class="nav-link" href="shop.html"><i class="fa-solid fa-cart-shopping me-1"></i>কেনাকাটা</a></li>
+          <li class="nav-item"><a class="nav-link nav-shop" href="shop.html"><i class="fa-solid fa-basket-shopping me-1"></i>কেনাকাটা</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-oha btn-sm px-3" href="shop.html">অর্ডার করুন</a></li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
-  <div class="offcanvas-header"><h5 class="offcanvas-title">OHA Shop</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title fw-bold" id="mobileMenuLabel">OHA Shop</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
   <div class="offcanvas-body">
-    <a class="d-block py-2 text-decoration-none" href="index.html">হোম</a>
-    <a class="d-block py-2 text-decoration-none" href="lifestyle.html">লাইফস্টাইল</a>
-    <a class="d-block py-2 text-decoration-none" href="shop.html">কেনাকাটা</a>
+    <nav class="mobile-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i> হোম</a>
+      <a href="lifestyle.html"><i class="fa-solid fa-circle-play"></i> লাইফস্টাইল</a>
+      <a href="shop.html"><i class="fa-solid fa-basket-shopping"></i> কেনাকাটা</a>
+      <a class="mobile-order" href="shop.html"><i class="fa-solid fa-cart-shopping"></i> এখনই অর্ডার করুন</a>
+    </nav>
   </div>
 </div>
