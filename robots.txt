@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ohashop.top/sitemap.xml
