@@ -1,0 +1,25 @@
+:root {
+  --oha-green: #1f5d43;
+  --oha-deep: #164632;
+  --oha-olive: #758a45;
+  --oha-cream: #fbf8ef;
+  --oha-brown: #8a6847;
+  --oha-text: #25312b;
+}
+body { color: var(--oha-text); background: #fff; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.site-header { background: rgba(255,255,255,.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(31,93,67,.08); }
+.navbar-brand { color: var(--oha-deep); }
+.nav-link { color: #33443c; font-weight: 600; }
+.nav-link:hover { color: var(--oha-green); }
+.brand-mark { width: 38px; height: 38px; display: inline-flex; align-items:center; justify-content:center; background: var(--oha-green); color:#fff; border-radius: 50%; }
+.hero { background: linear-gradient(135deg, var(--oha-cream), #fff); border-radius: 2rem; padding-inline: clamp(1.25rem, 4vw, 4rem) !important; }
+.eyebrow { color: var(--oha-green); font-weight: 700; letter-spacing: .02em; }
+.hero-card { min-height: 280px; display:flex; flex-direction:column; justify-content:center; background:#fff; border:1px solid rgba(31,93,67,.10); box-shadow: 0 20px 60px rgba(22,70,50,.08); }
+.hero-icon { font-size: 4rem; color: var(--oha-green); }
+.btn-oha { background: var(--oha-green); border-color: var(--oha-green); color:#fff; }
+.btn-oha:hover { background: var(--oha-deep); border-color: var(--oha-deep); color:#fff; }
+.btn-outline-oha { color: var(--oha-green); border-color: var(--oha-green); }
+.btn-outline-oha:hover { background: var(--oha-green); color:#fff; }
+.site-footer { background: var(--oha-cream); }
+.site-footer a { display:block; color:var(--oha-text); text-decoration:none; margin:.35rem 0; }
+.site-footer a:hover { color:var(--oha-green); }
