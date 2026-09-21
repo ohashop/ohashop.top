@@ -1,35 +1,312 @@
-<header class="site-header sticky-top">
-  <nav class="navbar navbar-expand-lg py-2">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="OHA Shop Home">
-        <span class="brand-mark"><i class="fa-solid fa-leaf"></i></span>
-        <span class="brand-name">OHA <span>Shop</span></span>
-      </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu">
-        <i class="fa-solid fa-bars-staggered"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="desktopNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
-          <li class="nav-item"><a class="nav-link" href="lifestyle.html">লাইফস্টাইল</a></li>
-          <li class="nav-item"><a class="nav-link nav-shop" href="shop.html"><i class="fa-solid fa-basket-shopping me-1"></i>কেনাকাটা</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-oha btn-sm px-3" href="shop.html">অর্ডার করুন</a></li>
-        </ul>
-      </div>
+<!-- =========================================================
+     OHA SHOP — HEADER
+     File: includes/header.html
+     ========================================================= -->
+<header class="oha-site-header">
+    <!-- Top Announcement Bar -->
+    <div class="oha-topbar">
+        <div class="container">
+            <div class="oha-topbar-inner">
+                <div class="oha-topbar-left">
+                    <span>
+                        <i class="fa-solid fa-leaf"></i>
+                        Natural choices for everyday living
+                    </span>
+                </div>
+                <div class="oha-topbar-right">
+                    <a href="lifestyle.html">
+                        লাইফস্টাইল
+                    </a>
+                    <span class="topbar-divider">|</span>
+                    <a href="shop.html">
+                        কেনাকাটা
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
-</header>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-  <div class="offcanvas-header border-bottom">
-    <h5 class="offcanvas-title fw-bold" id="mobileMenuLabel">OHA Shop</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <nav class="mobile-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i> হোম</a>
-      <a href="lifestyle.html"><i class="fa-solid fa-circle-play"></i> লাইফস্টাইল</a>
-      <a href="shop.html"><i class="fa-solid fa-basket-shopping"></i> কেনাকাটা</a>
-      <a class="mobile-order" href="shop.html"><i class="fa-solid fa-cart-shopping"></i> এখনই অর্ডার করুন</a>
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg oha-navbar">
+        <div class="container">
+            <!-- Brand -->
+            <a
+                class="navbar-brand oha-brand"
+                href="index.html"
+                aria-label="OHA Shop Home"
+            >
+                <span class="oha-brand-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+                <span class="oha-brand-text">
+                    <strong>OHA Shop</strong>
+                    <small>
+                        Natural choices for everyday living
+                    </small>
+                </span>
+            </a>
+            <!-- Mobile Toggle -->
+            <button
+                class="navbar-toggler oha-navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#ohaMobileMenu"
+                aria-controls="ohaMobileMenu"
+                aria-label="Open navigation"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- Desktop Navigation -->
+            <div
+                class="collapse navbar-collapse"
+                id="ohaDesktopNavigation"
+            >
+                <!-- Main Menu -->
+                <ul class="navbar-nav mx-auto oha-main-menu">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link oha-nav-link"
+                            href="index.html"
+                            data-page="home"
+                        >
+                            হোম
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link oha-nav-link"
+                            href="lifestyle.html"
+                            data-page="lifestyle"
+                        >
+                            লাইফস্টাইল
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link oha-nav-link"
+                            href="shop.html"
+                            data-page="shop"
+                        >
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            কেনাকাটা
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link oha-nav-link"
+                            href="#"
+                            data-page="about"
+                        >
+                            আমাদের সম্পর্কে
+                        </a>
+                    </li>
+                </ul>
+                <!-- Right Navigation -->
+                <div class="oha-nav-actions">
+                    <!-- Search -->
+                    <button
+                        type="button"
+                        class="oha-icon-button"
+                        aria-label="Search"
+                        title="Search"
+                    >
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <!-- Cart -->
+                    <a
+                        href="shop.html"
+                        class="oha-cart-button"
+                        aria-label="Shopping cart"
+                        title="Shopping cart"
+                    >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span
+                            class="oha-cart-count"
+                            id="cart-count"
+                        >
+                            0
+                        </span>
+                    </a>
+                    <!-- Order CTA -->
+                    <a
+                        href="shop.html"
+                        class="oha-header-cta"
+                    >
+                        <span>
+                            অর্ডার করুন
+                        </span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
-  </div>
-</div>
+    <!-- =====================================================
+         MOBILE OFFCANVAS MENU
+         ===================================================== -->
+    <div
+        class="offcanvas offcanvas-end oha-mobile-menu"
+        tabindex="-1"
+        id="ohaMobileMenu"
+        aria-labelledby="ohaMobileMenuLabel"
+    >
+        <div class="offcanvas-header">
+            <a
+                href="index.html"
+                class="oha-mobile-brand"
+                id="ohaMobileMenuLabel"
+            >
+                <span class="oha-brand-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+                <span>
+                    <strong>OHA Shop</strong>
+                    <small>
+                        Natural choices
+                    </small>
+                </span>
+            </a>
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+            ></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="oha-mobile-navigation">
+                <a
+                    href="index.html"
+                    class="oha-mobile-link"
+                    data-page="home"
+                >
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        হোম
+                    </span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a
+                    href="lifestyle.html"
+                    class="oha-mobile-link"
+                    data-page="lifestyle"
+                >
+                    <span>
+                        <i class="fa-solid fa-circle-play"></i>
+                        লাইফস্টাইল
+                    </span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a
+                    href="shop.html"
+                    class="oha-mobile-link"
+                    data-page="shop"
+                >
+                    <span>
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        কেনাকাটা
+                    </span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a
+                    href="#"
+                    class="oha-mobile-link"
+                    data-page="about"
+                >
+                    <span>
+                        <i class="fa-solid fa-circle-info"></i>
+                        আমাদের সম্পর্কে
+                    </span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+            <!-- Mobile CTA -->
+            <div class="oha-mobile-cta">
+                <div class="oha-mobile-cta-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div>
+                    <strong>
+                        Natural choices
+                    </strong>
+                    <p>
+                        প্রতিদিনের জীবনের জন্য
+                    </p>
+                </div>
+            </div>
+            <a
+                href="shop.html"
+                class="oha-mobile-order-button"
+            >
+                <i class="fa-solid fa-cart-shopping"></i>
+                এখনই অর্ডার করুন
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <!-- Mobile Contact -->
+            <div class="oha-mobile-contact">
+                <div>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>
+                        WhatsApp
+                    </span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>
+                        যোগাযোগ
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Overlay -->
+    <div
+        class="oha-search-overlay"
+        id="ohaSearchOverlay"
+    >
+        <div class="oha-search-box">
+            <button
+                type="button"
+                class="oha-search-close"
+                id="ohaSearchClose"
+                aria-label="Close search"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="oha-search-label">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                কী খুঁজছেন?
+            </div>
+            <form
+                class="oha-search-form"
+                id="ohaSearchForm"
+            >
+                <input
+                    type="search"
+                    id="ohaSearchInput"
+                    placeholder="পণ্য খুঁজুন..."
+                    autocomplete="off"
+                >
+                <button
+                    type="submit"
+                >
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+            <div class="oha-search-suggestions">
+                <span>জনপ্রিয়:</span>
+                <a href="shop.html">
+                    মধু
+                </a>
+                <a href="shop.html">
+                    ঘি
+                </a>
+                <a href="shop.html">
+                    সরিষার তেল
+                </a>
+                <a href="shop.html">
+                    কালোজিরার তেল
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
