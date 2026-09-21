@@ -41,3 +41,24 @@ Important:
 - Prices are intentionally `0` until the real catalog prices are supplied.
 - Draft products 18–20 must be confirmed against actual inventory before publication.
 - Product claims remain informational; medical/therapeutic guarantees are not included.
+
+- # OHA Shop — M4 Home / Landing Page
+
+## Added
+- Premium organic-grocery editorial home page
+- Responsive hero section
+- Brand story section
+- Dynamic product-story sections loaded from `data/products.json`
+- Alternating image/placeholder + text layout
+- Safe, non-therapeutic product copy
+- "Why OHA Shop?" section
+- Final CTA
+- Draft products are not shown as live products; they appear in a "Coming Soon" strip.
+
+## Integration
+Copy these files into the existing M3 project:
+- `index.html` (replace M3 index)
+- `assets/css/home.css`
+- `assets/js/home.js`
+
+M4 does not replace M3 product data, header/footer, or global styles.
