@@ -1,39 +1,296 @@
-<footer class="site-footer">
-  <div class="container py-5">
-    <div class="row g-4 g-lg-5">
-      <div class="col-lg-5">
-        <a class="footer-brand d-inline-flex align-items-center gap-2 text-decoration-none" href="index.html">
-          <span class="brand-mark"><i class="fa-solid fa-leaf"></i></span>
-          <span class="brand-name">OHA <span>Shop</span></span>
-        </a>
-        <p class="mt-3 mb-0 footer-copy">প্রকৃতির কাছাকাছি খাবার, প্রতিদিনের জীবনের জন্য। নির্বাচিত অর্গানিক, প্রাকৃতিক ও ফাংশনাল ফুড—সহজে জানুন, বুঝুন এবং বেছে নিন।</p>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="footer-title">দ্রুত লিংক</h6>
-        <a href="index.html">হোম</a>
-        <a href="lifestyle.html">লাইফস্টাইল</a>
-        <a href="shop.html">কেনাকাটা</a>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="footer-title">সহায়তা</h6>
-        <a href="shop.html">অর্ডার করুন</a>
-        <a href="#">ডেলিভারি</a>
-        <a href="#">যোগাযোগ</a>
-      </div>
-      <div class="col-lg-3">
-        <h6 class="footer-title">আমাদের সঙ্গে থাকুন</h6>
-        <div class="social-row">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<!-- =========================================================
+     OHA SHOP — FOOTER
+     File: includes/footer.html
+     ========================================================= -->
+<footer class="oha-site-footer">
+    <!-- =====================================================
+         NEWSLETTER / CTA
+         ===================================================== -->
+    <section class="oha-footer-newsletter">
+        <div class="container">
+            <div class="oha-newsletter-box">
+                <div class="row align-items-center g-4">
+                    <!-- Text -->
+                    <div class="col-lg-6">
+                        <span class="oha-footer-label">
+                            STAY CONNECTED
+                        </span>
+                        <h2>
+                            OHA Shop-এর সাথে
+                            যুক্ত থাকুন
+                        </h2>
+                        <p>
+                            নতুন পণ্য, খাবার ও জীবনযাপন বিষয়ক
+                            তথ্য এবং বিশেষ অফার সম্পর্কে জানতে
+                            আমাদের সাথে থাকুন।
+                        </p>
+                    </div>
+                    <!-- Newsletter -->
+                    <div class="col-lg-6">
+                        <form
+                            class="oha-newsletter-form"
+                            id="ohaNewsletterForm"
+                        >
+                            <div class="oha-newsletter-input">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="আপনার ইমেইল ঠিকানা"
+                                    aria-label="Email address"
+                                    required
+                                >
+                                <button
+                                    type="submit"
+                                >
+                                    সাবস্ক্রাইব
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                            <small>
+                                আপনার তথ্য শুধুমাত্র OHA Shop-এর
+                                যোগাযোগের জন্য ব্যবহার করা হবে।
+                            </small>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="small text-secondary mt-3 mb-0">নিরাপদ ও সচেতন খাদ্যাভ্যাসের জন্য তথ্যভিত্তিক গাইড।</p>
-      </div>
+    </section>
+    <!-- =====================================================
+         MAIN FOOTER
+         ===================================================== -->
+    <div class="oha-footer-main">
+        <div class="container">
+            <div class="row g-5">
+                <!-- BRAND -->
+                <div class="col-lg-4 col-md-6">
+                    <a
+                        href="index.html"
+                        class="oha-footer-brand"
+                    >
+                        <span class="oha-footer-logo">
+                            <i class="fa-solid fa-leaf"></i>
+                        </span>
+                        <span>
+                            <strong>
+                                OHA Shop
+                            </strong>
+                            <small>
+                                Natural choices for everyday living
+                            </small>
+                        </span>
+                    </a>
+                    <p class="oha-footer-description">
+                        নির্বাচিত অর্গানিক, প্রাকৃতিক ও
+                        ফাংশনাল ফুড—আপনার দৈনন্দিন জীবনের
+                        জন্য সহজ ও সচেতন পছন্দ।
+                    </p>
+                    <!-- Social -->
+                    <div class="oha-footer-social">
+                        <a
+                            href="#"
+                            aria-label="Facebook"
+                            title="Facebook"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a
+                            href="#"
+                            aria-label="YouTube"
+                            title="YouTube"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a
+                            href="#"
+                            aria-label="WhatsApp"
+                            title="WhatsApp"
+                        >
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a
+                            href="#"
+                            aria-label="Instagram"
+                            title="Instagram"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- QUICK LINKS -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h3 class="oha-footer-title">
+                        দ্রুত লিংক
+                    </h3>
+                    <ul class="oha-footer-links">
+                        <li>
+                            <a href="index.html">
+                                হোম
+                            </a>
+                        </li>
+                        <li>
+                            <a href="lifestyle.html">
+                                লাইফস্টাইল
+                            </a>
+                        </li>
+                        <li>
+                            <a href="shop.html">
+                                কেনাকাটা
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                আমাদের সম্পর্কে
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                যোগাযোগ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- SHOP -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h3 class="oha-footer-title">
+                        কেনাকাটা
+                    </h3>
+                    <ul class="oha-footer-links">
+                        <li>
+                            <a href="shop.html">
+                                অর্গানিক গ্রোসারি
+                            </a>
+                        </li>
+                        <li>
+                            <a href="shop.html">
+                                মধু
+                            </a>
+                        </li>
+                        <li>
+                            <a href="shop.html">
+                                ঘি
+                            </a>
+                        </li>
+                        <li>
+                            <a href="shop.html">
+                                প্রাকৃতিক তেল
+                            </a>
+                        </li>
+                        <li>
+                            <a href="shop.html">
+                                Functional Food
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- SUPPORT -->
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="oha-footer-title">
+                        যোগাযোগ ও সহায়তা
+                    </h3>
+                    <div class="oha-footer-contact">
+                        <!-- WhatsApp -->
+                        <a
+                            href="#"
+                            class="oha-contact-item"
+                        >
+                            <span class="oha-contact-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </span>
+                            <span>
+                                <small>
+                                    WhatsApp
+                                </small>
+                                <strong>
+                                    আমাদের সাথে যোগাযোগ করুন
+                                </strong>
+                            </span>
+                        </a>
+                        <!-- Phone -->
+                        <a
+                            href="#"
+                            class="oha-contact-item"
+                        >
+                            <span class="oha-contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <span>
+                                <small>
+                                    ফোন
+                                </small>
+                                <strong>
+                                    Customer Support
+                                </strong>
+                            </span>
+                        </a>
+                        <!-- Email -->
+                        <a
+                            href="#"
+                            class="oha-contact-item"
+                        >
+                            <span class="oha-contact-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                            </span>
+                            <span>
+                                <small>
+                                    Email
+                                </small>
+                                <strong>
+                                    support@ohashop.top
+                                </strong>
+                            </span>
+                        </a>
+                        <!-- Delivery -->
+                        <div class="oha-contact-item">
+                            <span class="oha-contact-icon">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </span>
+                            <span>
+                                <small>
+                                    Delivery
+                                </small>
+                                <strong>
+                                    Home Delivery & Delivery Point
+                                </strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <hr class="footer-divider">
-    <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-secondary">
-      <span>© 2026 OHA Shop. All Rights Reserved.</span>
-      <span>ohashop.top</span>
+    <!-- =====================================================
+         FOOTER BOTTOM
+         ===================================================== -->
+    <div class="oha-footer-bottom">
+        <div class="container">
+            <div class="oha-footer-bottom-inner">
+                <!-- Copyright -->
+                <div class="oha-copyright">
+                    ©
+                    <span id="ohaCurrentYear">
+                        2026
+                    </span>
+                    OHA Shop.
+                    All rights reserved.
+                </div>
+                <!-- Policies -->
+                <div class="oha-footer-policies">
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+                    <a href="#">
+                        Delivery Policy
+                    </a>
+                    <a href="#">
+                        Return Policy
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
