@@ -90,3 +90,9 @@ a{color:inherit}
   .hero h1{font-size:2.15rem}
   .hero-card{min-height:220px}
 }
+
+/* M3 — product data helpers */
+.product-data-note{background:#fffaf0;border:1px solid rgba(138,104,71,.18);border-radius:1rem;padding:1rem}
+.product-placeholder{background:#f3f6ef;border-radius:1rem;min-height:220px;display:flex;align-items:center;justify-content:center;color:#6b776f}
+.variant-select{min-width:0}
+.qty-input{max-width:110px}
