@@ -18,6 +18,29 @@ document.addEventListener('DOMContentLoaded', async () => {
       const target = link.getAttribute('href');
       if (target === current) link.classList.add('active');
     });
+
+    let OHA_PRODUCTS = null;
+
+async function loadProducts() {
+  if (OHA_PRODUCTS) return OHA_PRODUCTS;
+  const response = await fetch('data/products.json');
+  if (!response.ok) throw new Error('Unable to load product data.');
+  OHA_PRODUCTS = await response.json();
+  return OHA_PRODUCTS;
+}
+
+function getProductById(id) {
+  return OHA_PRODUCTS?.products?.find(product => product.id === id) || null;
+}
+
+function getGroceryProducts() {
+  return OHA_PRODUCTS?.products?.filter(product => product.category === 'grocery') || [];
+}
+
+function getFunctionalProducts() {
+  return OHA_PRODUCTS?.products?.filter(product => product.category === 'functional-food' && !product.draft) || [];
+}
+
   };
 
   await loadPartial('#site-header', 'includes/header.html');
