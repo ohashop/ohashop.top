@@ -1,30 +1,18 @@
+
 /* =========================================================
-   OHA SHOP — GLOBAL STYLESHEET
+   OHA SHOP — GLOBAL RESPONSIVE STYLESHEET
    File: assets/css/style.css
-   Global:
-   - Fonts
-   - Colors
-   - Typography
-   - Header
-   - Footer
-   - Buttons
-   - Forms
-   - Search
-   - Cart
-   - Responsive foundation
+   Brand: Organic Halal Agri
    ========================================================= */
-/* =========================================================
-   GOOGLE FONTS
-   ========================================================= */
+
+/* 01. GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap');
-/* =========================================================
-   ROOT VARIABLES
-   ========================================================= */
+
+/* 02. BRAND VARIABLES */
 :root {
-    /* Brand */
     --oha-green: #1f6b3f;
     --oha-green-dark: #123f2d;
-    --oha-green-deep: #0d3325;
+    --oha-green-deep: #0b3021;
     --oha-olive: #789b36;
     --oha-lime: #9abf43;
     --oha-cream: #fbf8ee;
@@ -33,73 +21,123 @@
     --oha-orange: #d98627;
     --oha-red: #c64f42;
     --oha-blue: #3f8295;
+
     --oha-white: #ffffff;
-    --oha-black: #151a17;
-    /* Text */
-    --oha-text: #26322b;
-    --oha-text-light: #68736c;
-    --oha-text-muted: #8a938d;
-    /* Borders */
-    --oha-border: #e5e1d7;
-    --oha-border-light: #eeeae1;
-    /* Background */
-    --oha-body-bg: #ffffff;
-    --oha-section-bg: #fbf8ee;
-    /* Shadows */
-    --oha-shadow-sm:
-        0 4px 14px rgba(18, 63, 45, 0.06);
-    --oha-shadow:
-        0 10px 30px rgba(18, 63, 45, 0.09);
-    --oha-shadow-lg:
-        0 18px 50px rgba(18, 63, 45, 0.13);
-    /* Radius */
+    --oha-black: #17231b;
+    --oha-text: #222a25;
+    --oha-muted: #6b756e;
+    --oha-border: #e6e9e2;
+    --oha-soft-green: #edf5e9;
+
+    --oha-font: "Inter", "Noto Sans Bengali", sans-serif;
+    --oha-font-bn: "Noto Sans Bengali", "Inter", sans-serif;
+
     --oha-radius-sm: 8px;
-    --oha-radius: 14px;
+    --oha-radius-md: 14px;
     --oha-radius-lg: 22px;
     --oha-radius-xl: 30px;
-    /* Transition */
-    --oha-transition:
-        all 0.25s ease;
-    /* Container */
-    --oha-container-width: 1320px;
+    --oha-radius-pill: 999px;
+
+    --oha-shadow-sm: 0 4px 14px rgba(18, 63, 45, 0.06);
+    --oha-shadow-md: 0 10px 30px rgba(18, 63, 45, 0.10);
+    --oha-shadow-lg: 0 18px 50px rgba(18, 63, 45, 0.14);
+
+    --oha-container: 1200px;
+    --oha-header-height: 76px;
+
+    --oha-transition: 0.25s ease;
 }
-/* =========================================================
-   GLOBAL RESET
-   ========================================================= */
+
+/* 03. RESET */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
-html,
+
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-}
-body {
-    font-family:
-        "Inter",
-        "Noto Sans Bengali",
-        sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.7;
+    min-width: 320px;
     color: var(--oha-text);
-    background:
-        var(--oha-body-bg);
+    background: var(--oha-white);
+    font-family: var(--oha-font);
+    font-size: 16px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
 }
-body.oha-search-open {
-    overflow: hidden;
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: var(--oha-font);
 }
-/* =========================================================
-   TYPOGRAPHY
-   ========================================================= */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: var(--oha-green);
+    text-decoration: none;
+    transition: color var(--oha-transition);
+}
+
+a:hover {
+    color: var(--oha-olive);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(120, 155, 54, 0.55);
+    outline-offset: 3px;
+}
+
 h1,
 h2,
 h3,
@@ -107,1419 +145,1527 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    color:
-        var(--oha-green-dark);
+    color: var(--oha-green-dark);
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
 }
+
+h1 {
+    font-size: clamp(2rem, 4.5vw, 3.75rem);
+}
+
+h2 {
+    font-size: clamp(1.65rem, 3vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
 p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
-a {
-    color:
-        inherit;
-    text-decoration: none;
-    transition:
-        var(--oha-transition);
+
+ul,
+ol {
+    padding-left: 1.25rem;
 }
-a:hover {
-    color:
-        var(--oha-green);
-}
-button,
-input,
-textarea,
-select {
-    font-family:
-        inherit;
-}
-button {
-    cursor: pointer;
-}
-img {
+
+table {
     max-width: 100%;
-    height: auto;
-    display: block;
 }
-/* =========================================================
-   CONTAINER
-   ========================================================= */
-.container {
-    width: 100%;
-    max-width:
-        var(--oha-container-width);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--oha-border);
+    margin: 2rem 0;
 }
-/* =========================================================
-   SELECTION
-   ========================================================= */
+
 ::selection {
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
+    color: var(--oha-white);
+    background: var(--oha-green);
 }
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-::-webkit-scrollbar {
-    width: 9px;
+
+/* 04. BENGALI TYPOGRAPHY HELPERS */
+.bn,
+.bengali,
+[lang="bn"] {
+    font-family: var(--oha-font-bn);
 }
-::-webkit-scrollbar-track {
-    background:
-        #f1eee6;
+
+.text-muted {
+    color: var(--oha-muted) !important;
 }
-::-webkit-scrollbar-thumb {
-    background:
-        var(--oha-olive);
-    border-radius:
-        20px;
+
+/* 05. LAYOUT UTILITIES */
+.oha-container,
+.site-container {
+    width: min(
+        calc(100% - 48px),
+        var(--oha-container)
+    );
+    margin-inline: auto;
 }
-::-webkit-scrollbar-thumb:hover {
-    background:
-        var(--oha-green);
-}
-/* =========================================================
-   TOP ANNOUNCEMENT BAR
-   ========================================================= */
-.oha-topbar {
+
+.oha-section {
     position: relative;
-    z-index: 1000;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green-dark);
-    font-size: 13px;
+    padding-block: clamp(48px, 7vw, 92px);
 }
-.oha-topbar-inner {
-    min-height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+
+.oha-section-sm {
+    padding-block: clamp(32px, 4vw, 56px);
 }
-.oha-topbar-left,
-.oha-topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.oha-topbar-left i {
-    margin-right: 5px;
-    color:
-        var(--oha-lime);
-}
-.oha-topbar-right a {
-    color:
-        rgba(255, 255, 255, 0.9);
-}
-.oha-topbar-right a:hover {
-    color:
-        var(--oha-white);
-}
-.topbar-divider {
-    color:
-        rgba(255, 255, 255, 0.35);
-}
-/* =========================================================
-   MAIN NAVBAR
-   ========================================================= */
-.oha-navbar {
-    position: relative;
-    z-index: 999;
-    min-height: 82px;
-    background:
-        var(--oha-white);
-    border-bottom:
-        1px solid var(--oha-border-light);
-}
-.oha-navbar .container {
-    min-height: 82px;
-    display: flex;
-    align-items: center;
-}
-/* =========================================================
-   BRAND
-   ========================================================= */
-.oha-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 11px;
-    flex-shrink: 0;
-}
-.oha-brand:hover {
-    color:
-        inherit;
-}
-.oha-brand-icon {
-    width: 43px;
-    height: 43px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-    border-radius:
-        50% 50% 50% 8px;
-    transform:
-        rotate(-3deg);
-    box-shadow:
-        0 5px 14px rgba(31, 107, 63, 0.18);
-}
-.oha-brand-icon i {
-    font-size: 19px;
-    transform:
-        rotate(3deg);
-}
-.oha-brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-}
-.oha-brand-text strong {
-    color:
-        var(--oha-green-dark);
-    font-size: 21px;
+
+.oha-section-title {
+    margin-bottom: 14px;
+    color: var(--oha-green-dark);
+    font-size: clamp(1.7rem, 3vw, 2.55rem);
     font-weight: 800;
-    letter-spacing: -0.4px;
+    line-height: 1.35;
 }
-.oha-brand-text small {
-    margin-top: 5px;
-    color:
-        var(--oha-text-muted);
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+
+.oha-section-subtitle {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--oha-muted);
+    font-size: clamp(0.94rem, 1.3vw, 1.08rem);
+    line-height: 1.85;
+}
+
+.oha-section-heading {
+    margin-bottom: 34px;
+}
+
+.oha-section-heading.text-center {
+    text-align: center;
+}
+
+.oha-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    color: var(--oha-olive);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-/* =========================================================
-   DESKTOP NAVIGATION
-   ========================================================= */
-.oha-main-menu {
-    align-items: center;
-    gap: 5px;
+
+.oha-bg-cream {
+    background: var(--oha-cream);
 }
-.oha-nav-link {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding:
-        10px 15px !important;
-    color:
-        #47534b !important;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius:
-        50px;
+
+.oha-bg-soft-green {
+    background: var(--oha-soft-green);
 }
-.oha-nav-link:hover {
-    color:
-        var(--oha-green) !important;
-    background:
-        #f5f8f1;
+
+.oha-rounded {
+    border-radius: var(--oha-radius-lg);
 }
-.oha-nav-link.active {
-    color:
-        var(--oha-green) !important;
-    background:
-        #eef5e9;
+
+.oha-shadow {
+    box-shadow: var(--oha-shadow-md);
 }
-.oha-nav-link i {
-    font-size: 13px;
+
+.oha-text-green {
+    color: var(--oha-green) !important;
 }
-/* =========================================================
-   NAV ACTIONS
-   ========================================================= */
-.oha-nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+.oha-text-center {
+    text-align: center;
 }
-.oha-icon-button,
-.oha-cart-button {
-    width: 42px;
-    height: 42px;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color:
-        var(--oha-green-dark);
-    background:
-        #f7f7f3;
-    border:
-        1px solid transparent;
-    border-radius:
-        50%;
-    transition:
-        var(--oha-transition);
+
+.oha-overflow-hidden {
+    overflow: hidden;
 }
-.oha-icon-button:hover,
-.oha-cart-button:hover {
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-    transform:
-        translateY(-1px);
-}
-.oha-cart-count {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    min-width: 19px;
-    height: 19px;
-    padding: 0 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-orange);
-    border:
-        2px solid var(--oha-white);
-    border-radius:
-        50px;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1;
-}
-.oha-header-cta {
-    min-height: 43px;
+
+/* 06. BUTTONS */
+.oha-btn,
+.btn-oha,
+.btn-oha-primary,
+.btn-oha-outline,
+.btn-oha-light {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 9px;
-    padding:
-        0 17px;
-    color:
-        var(--oha-white) !important;
-    background:
-        var(--oha-green);
-    border-radius:
-        50px;
-    font-size: 14px;
+    min-height: 46px;
+    padding: 12px 23px;
+    border: 1px solid transparent;
+    border-radius: var(--oha-radius-pill);
+    font-size: 0.94rem;
     font-weight: 700;
-    box-shadow:
-        0 5px 14px rgba(31, 107, 63, 0.16);
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        color var(--oha-transition),
+        background var(--oha-transition),
+        border-color var(--oha-transition),
+        box-shadow var(--oha-transition),
+        transform var(--oha-transition);
 }
-.oha-header-cta:hover {
-    color:
-        var(--oha-white) !important;
-    background:
-        var(--oha-green-dark);
-    transform:
-        translateY(-1px);
+
+.oha-btn:hover,
+.btn-oha:hover,
+.btn-oha-primary:hover,
+.btn-oha-outline:hover,
+.btn-oha-light:hover {
+    transform: translateY(-2px);
 }
-.oha-header-cta i {
-    font-size: 12px;
+
+.oha-btn-primary,
+.btn-oha-primary {
+    color: var(--oha-white);
+    background: var(--oha-green);
+    border-color: var(--oha-green);
 }
-/* =========================================================
-   MOBILE NAV TOGGLER
-   ========================================================= */
-.oha-navbar-toggler {
-    width: 44px;
-    height: 44px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    color:
-        var(--oha-green-dark);
-    background:
-        #f4f6f1;
-    border:
-        0;
-    border-radius:
-        50%;
+
+.oha-btn-primary:hover,
+.btn-oha-primary:hover {
+    color: var(--oha-white);
+    background: var(--oha-green-dark);
+    border-color: var(--oha-green-dark);
+    box-shadow: var(--oha-shadow-sm);
 }
-.oha-navbar-toggler:focus {
-    box-shadow:
-        0 0 0 3px rgba(31, 107, 63, 0.12);
+
+.oha-btn-outline,
+.btn-oha-outline {
+    color: var(--oha-green);
+    background: transparent;
+    border-color: var(--oha-green);
 }
-/* =========================================================
-   MOBILE OFFCANVAS
-   ========================================================= */
-.oha-mobile-menu {
-    width: min(370px, 92vw);
-    background:
-        var(--oha-cream);
-    border: 0;
+
+.oha-btn-outline:hover,
+.btn-oha-outline:hover {
+    color: var(--oha-white);
+    background: var(--oha-green);
 }
-.oha-mobile-menu .offcanvas-header {
-    padding:
-        22px 22px 15px;
-    border-bottom:
-        1px solid var(--oha-border);
+
+.oha-btn-light,
+.btn-oha-light {
+    color: var(--oha-green-dark);
+    background: var(--oha-white);
+    border-color: var(--oha-white);
 }
-.oha-mobile-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+
+.oha-btn-light:hover,
+.btn-oha-light:hover {
+    color: var(--oha-green);
+    background: var(--oha-cream);
 }
-.oha-mobile-brand strong {
-    display: block;
-    color:
-        var(--oha-green-dark);
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.1;
+
+.oha-btn-sm {
+    min-height: 38px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
 }
-.oha-mobile-brand small {
-    display: block;
-    margin-top: 3px;
-    color:
-        var(--oha-text-muted);
-    font-size: 10px;
-}
-.oha-mobile-menu .offcanvas-body {
-    padding:
-        22px;
-}
-.oha-mobile-navigation {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.oha-mobile-link {
+
+.oha-btn-lg {
     min-height: 54px;
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+.oha-btn-block {
+    display: flex;
+    width: 100%;
+}
+
+button:disabled,
+button[disabled],
+.oha-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 07. TOP ANNOUNCEMENT BAR */
+.topbar,
+.site-topbar,
+.announcement-bar {
+    position: relative;
+    z-index: 1031;
+    padding: 8px 16px;
+    color: var(--oha-white);
+    background: var(--oha-green-dark);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.topbar a,
+.site-topbar a,
+.announcement-bar a {
+    color: var(--oha-white);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* 08. SITE HEADER */
+#site-header {
+    position: relative;
+    z-index: 1030;
+}
+
+.site-header,
+.oha-header,
+.main-header {
+    position: relative;
+    z-index: 1030;
+    width: 100%;
+    background: var(--oha-white);
+}
+
+.header-main,
+.header-inner,
+.navbar-inner,
+.oha-header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:
-        0 17px;
-    color:
-        var(--oha-text);
-    background:
-        var(--oha-white);
-    border:
-        1px solid var(--oha-border-light);
-    border-radius:
-        var(--oha-radius);
+    gap: 24px;
+    min-height: var(--oha-header-height);
 }
-.oha-mobile-link > span {
+
+.header-sticky,
+.site-header.is-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 3px 18px rgba(18, 63, 45, 0.06);
+    backdrop-filter: blur(12px);
+}
+
+.site-logo,
+.header-logo,
+.oha-logo,
+.brand-logo {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-shrink: 0;
+    color: var(--oha-green-dark);
+    font-size: 1.55rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.site-logo:hover,
+.header-logo:hover,
+.oha-logo:hover,
+.brand-logo:hover {
+    color: var(--oha-green);
+}
+
+.site-logo img,
+.header-logo img,
+.oha-logo img,
+.brand-logo img {
+    width: auto;
+    max-width: 180px;
+    max-height: 56px;
+    object-fit: contain;
+}
+
+.logo-icon,
+.site-logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--oha-olive);
+    font-size: 1.7rem;
+}
+
+.logo-text,
+.brand-name {
+    color: var(--oha-green-dark);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.logo-text span,
+.brand-name span {
+    color: var(--oha-olive);
+}
+
+.site-nav,
+.main-navigation,
+.desktop-navigation {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2vw, 30px);
+}
+
+.site-nav a,
+.main-navigation a,
+.desktop-navigation a,
+.nav-link-oha {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--oha-text);
+    font-size: 0.92rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.site-nav a:hover,
+.main-navigation a:hover,
+.desktop-navigation a:hover,
+.nav-link-oha:hover,
+.site-nav a.active,
+.main-navigation a.active,
+.desktop-navigation a.active {
+    color: var(--oha-green);
+}
+
+.site-nav a.active::after,
+.main-navigation a.active::after,
+.desktop-navigation a.active::after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    background: var(--oha-olive);
+    border-radius: 2px;
+    content: "";
+}
+
+.header-actions,
+.header-tools,
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.header-icon-btn,
+.search-toggle,
+.cart-toggle,
+.mobile-menu-toggle,
+.header-action-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--oha-green-dark);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    font-size: 1.15rem;
+    transition: var(--oha-transition);
+}
+
+.header-icon-btn:hover,
+.search-toggle:hover,
+.cart-toggle:hover,
+.mobile-menu-toggle:hover,
+.header-action-btn:hover {
+    color: var(--oha-green);
+    background: var(--oha-soft-green);
+}
+
+.cart-count,
+.cart-badge,
+.header-cart-count {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 19px;
+    height: 19px;
+    padding-inline: 4px;
+    color: var(--oha-white);
+    background: var(--oha-red);
+    border: 2px solid var(--oha-white);
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.header-cta {
+    white-space: nowrap;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* 09. MOBILE OFFCANVAS NAVIGATION */
+.mobile-nav,
+.mobile-menu,
+.oha-mobile-menu {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1060;
+    width: min(88vw, 360px);
+    height: 100dvh;
+    padding: 24px;
+    overflow-y: auto;
+    background: var(--oha-white);
+    box-shadow: var(--oha-shadow-lg);
+    transform: translateX(-105%);
+    visibility: hidden;
+    transition:
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.mobile-nav.show,
+.mobile-nav.active,
+.mobile-menu.show,
+.mobile-menu.active,
+.oha-mobile-menu.show,
+.oha-mobile-menu.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.mobile-nav-overlay,
+.mobile-menu-overlay,
+.oha-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    background: rgba(11, 30, 19, 0.52);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.mobile-nav-overlay.show,
+.mobile-nav-overlay.active,
+.mobile-menu-overlay.show,
+.mobile-menu-overlay.active,
+.oha-menu-backdrop.show,
+.oha-menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-header,
+.mobile-menu-header,
+.oha-mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--oha-border);
+}
+
+.mobile-nav-close,
+.mobile-menu-close,
+.oha-mobile-menu-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: var(--oha-green-dark);
+    background: var(--oha-cream);
+    border: 0;
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
+
+.mobile-nav-links,
+.mobile-menu-links,
+.oha-mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-nav-links a,
+.mobile-menu-links a,
+.oha-mobile-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 10px 12px;
+    color: var(--oha-text);
+    border-radius: var(--oha-radius-sm);
     font-weight: 600;
 }
-.oha-mobile-link > span i {
-    width: 20px;
-    color:
-        var(--oha-green);
-    text-align: center;
+
+.mobile-nav-links a:hover,
+.mobile-menu-links a:hover,
+.oha-mobile-links a:hover {
+    color: var(--oha-green);
+    background: var(--oha-soft-green);
 }
-.oha-mobile-link > i {
-    color:
-        #a3aaa5;
-    font-size: 11px;
-}
-.oha-mobile-link:hover,
-.oha-mobile-link.active {
-    color:
-        var(--oha-green);
-    border-color:
-        #d7e5cc;
-    background:
-        #eef5e9;
-}
+
+.mobile-nav-cta,
+.mobile-menu-cta,
 .oha-mobile-cta {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-top: 30px;
-    padding: 17px;
-    background:
-        var(--oha-green-dark);
-    border-radius:
-        var(--oha-radius);
-    color:
-        var(--oha-white);
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
 }
-.oha-mobile-cta-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color:
-        var(--oha-green-dark);
-    background:
-        var(--oha-lime);
-    border-radius:
-        50% 50% 50% 8px;
-}
-.oha-mobile-cta strong {
-    display: block;
-    font-size: 14px;
-}
-.oha-mobile-cta p {
-    margin: 2px 0 0;
-    color:
-        rgba(255, 255, 255, 0.72);
-    font-size: 12px;
-}
-.oha-mobile-order-button {
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-    color:
-        var(--oha-white) !important;
-    background:
-        var(--oha-green);
-    border-radius:
-        50px;
-    font-size: 14px;
-    font-weight: 700;
-}
-.oha-mobile-contact {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 20px;
-    color:
-        var(--oha-text-muted);
-    font-size: 12px;
-}
-.oha-mobile-contact > div {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.oha-mobile-contact i {
-    color:
-        var(--oha-green);
-}
-/* =========================================================
-   SEARCH OVERLAY
-   ========================================================= */
+
+/* 10. SEARCH OVERLAY */
+.search-overlay,
+.site-search-overlay,
 .oha-search-overlay {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 1080;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding:
-        110px 20px 40px;
-    background:
-        rgba(13, 51, 37, 0.72);
-    backdrop-filter:
-        blur(8px);
-    -webkit-backdrop-filter:
-        blur(8px);
+    padding: clamp(20px, 6vw, 70px) 20px;
+    overflow-y: auto;
+    background: rgba(11, 30, 19, 0.65);
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
     transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease;
+        opacity var(--oha-transition),
+        visibility var(--oha-transition);
 }
-.oha-search-overlay.show {
+
+.search-overlay.show,
+.search-overlay.active,
+.site-search-overlay.show,
+.site-search-overlay.active,
+.oha-search-overlay.show,
+.oha-search-overlay.active {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
 }
-.oha-search-box {
-    position: relative;
-    width: 100%;
-    max-width: 720px;
-    padding:
-        38px;
-    background:
-        var(--oha-white);
-    border-radius:
-        var(--oha-radius-xl);
-    box-shadow:
-        var(--oha-shadow-lg);
-    transform:
-        translateY(-15px);
-    transition:
-        transform 0.3s ease;
+
+.search-panel,
+.search-overlay-content,
+.oha-search-panel {
+    width: min(100%, 760px);
+    padding: clamp(20px, 4vw, 38px);
+    background: var(--oha-white);
+    border-radius: var(--oha-radius-lg);
+    box-shadow: var(--oha-shadow-lg);
+    transform: translateY(-10px);
+    transition: transform var(--oha-transition);
 }
-.oha-search-overlay.show
-.oha-search-box {
-    transform:
-        translateY(0);
+
+.search-overlay.show .search-panel,
+.search-overlay.active .search-panel,
+.search-overlay.show .search-overlay-content,
+.search-overlay.active .search-overlay-content,
+.oha-search-overlay.show .oha-search-panel,
+.oha-search-overlay.active .oha-search-panel {
+    transform: translateY(0);
 }
+
+.search-overlay-close,
+.search-close,
 .oha-search-close {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 38px;
-    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color:
-        var(--oha-text);
-    background:
-        #f5f5f1;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    color: var(--oha-green-dark);
+    background: var(--oha-cream);
     border: 0;
-    border-radius:
-        50%;
+    border-radius: 50%;
+    font-size: 1.2rem;
 }
-.oha-search-close:hover {
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-}
-.oha-search-label {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin-bottom: 15px;
-    color:
-        var(--oha-green-dark);
-    font-size: 18px;
-    font-weight: 700;
-}
-.oha-search-label i {
-    color:
-        var(--oha-green);
-}
+
+.search-form,
 .oha-search-form {
     display: flex;
     align-items: stretch;
-    gap: 8px;
-}
-.oha-search-form input {
-    min-width: 0;
-    flex: 1;
-    height: 58px;
-    padding:
-        0 18px;
-    color:
-        var(--oha-text);
-    background:
-        #f8f8f4;
-    border:
-        1px solid var(--oha-border);
-    border-radius:
-        50px;
-    outline: none;
-}
-.oha-search-form input:focus {
-    border-color:
-        var(--oha-green);
-    box-shadow:
-        0 0 0 3px rgba(31, 107, 63, 0.08);
-}
-.oha-search-form button {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-    border: 0;
-    border-radius:
-        50%;
-}
-.oha-search-form button:hover {
-    background:
-        var(--oha-green-dark);
-}
-.oha-search-suggestions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
+    gap: 10px;
     margin-top: 18px;
-    color:
-        var(--oha-text-muted);
-    font-size: 12px;
 }
-.oha-search-suggestions a {
-    padding:
-        5px 11px;
-    color:
-        var(--oha-green);
-    background:
-        #eef5e9;
-    border-radius:
-        50px;
-    font-weight: 600;
-}
-.oha-search-suggestions a:hover {
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-}
-/* =========================================================
-   APP MESSAGE / TOAST
-   ========================================================= */
-.oha-app-message {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 10000;
-    max-width: min(430px, calc(100vw - 44px));
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding:
-        13px 14px;
-    color:
-        var(--oha-green-dark);
-    background:
-        var(--oha-white);
-    border:
-        1px solid var(--oha-border);
-    border-radius:
-        14px;
-    box-shadow:
-        var(--oha-shadow-lg);
-    animation:
-        ohaMessageIn 0.3s ease;
-}
-.oha-app-message-icon {
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-    border-radius:
-        50%;
-}
-.oha-app-message-text {
-    font-size: 13px;
-    font-weight: 600;
-}
-.oha-app-message-close {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-left: auto;
-    color:
-        var(--oha-text-muted);
-    background:
-        transparent;
-    border: 0;
-    border-radius:
-        50%;
-}
-.oha-app-message-close:hover {
-    color:
-        var(--oha-text);
-    background:
-        #f4f4ef;
-}
-@keyframes ohaMessageIn {
-    from {
-        opacity: 0;
-        transform:
-            translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-/* =========================================================
-   FOOTER NEWSLETTER
-   ========================================================= */
-.oha-footer-newsletter {
-    padding:
-        70px 0 0;
-    background:
-        var(--oha-cream);
-}
-.oha-newsletter-box {
-    position: relative;
-    overflow: hidden;
-    padding:
-        42px 48px;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green-dark);
-    border-radius:
-        var(--oha-radius-xl);
-}
-.oha-newsletter-box::before {
-    content: "";
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    top: -130px;
-    right: -70px;
-    border:
-        35px solid rgba(154, 191, 67, 0.12);
-    border-radius:
-        50%;
-}
-.oha-newsletter-box::after {
-    content: "";
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    bottom: -100px;
-    left: 35%;
-    background:
-        rgba(255, 255, 255, 0.035);
-    border-radius:
-        50%;
-}
-.oha-newsletter-box > * {
-    position: relative;
-    z-index: 1;
-}
-.oha-footer-label {
-    display: inline-block;
-    margin-bottom: 9px;
-    color:
-        var(--oha-lime);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.8px;
-}
-.oha-newsletter-box h2 {
-    margin-bottom: 10px;
-    color:
-        var(--oha-white);
-    font-size:
-        clamp(25px, 3vw, 36px);
-}
-.oha-newsletter-box p {
-    max-width: 570px;
-    margin-bottom: 0;
-    color:
-        rgba(255, 255, 255, 0.74);
-    font-size: 14px;
-}
-.oha-newsletter-input {
-    display: flex;
-    align-items: center;
-    min-height: 58px;
-    padding:
-        5px;
-    background:
-        var(--oha-white);
-    border-radius:
-        50px;
-}
-.oha-newsletter-input > i {
-    margin-left: 17px;
-    color:
-        var(--oha-green);
-}
-.oha-newsletter-input input {
-    min-width: 0;
+
+.search-form input,
+.oha-search-form input {
     flex: 1;
-    height: 48px;
-    padding:
-        0 13px;
-    color:
-        var(--oha-text);
-    background:
-        transparent;
-    border: 0;
-    outline: none;
-    font-size: 14px;
+    min-width: 0;
+    min-height: 50px;
+    padding: 12px 16px;
+    border: 1px solid var(--oha-border);
+    border-radius: var(--oha-radius-pill);
 }
-.oha-newsletter-input button {
-    min-height: 48px;
+
+/* 11. COMMON CARDS */
+.oha-card,
+.site-card {
+    min-width: 0;
+    background: var(--oha-white);
+    border: 1px solid var(--oha-border);
+    border-radius: var(--oha-radius-lg);
+    box-shadow: var(--oha-shadow-sm);
+    transition:
+        transform var(--oha-transition),
+        box-shadow var(--oha-transition),
+        border-color var(--oha-transition);
+}
+
+.oha-card:hover,
+.site-card:hover {
+    border-color: rgba(120, 155, 54, 0.35);
+    box-shadow: var(--oha-shadow-md);
+    transform: translateY(-3px);
+}
+
+.oha-card-body {
+    padding: 22px;
+}
+
+.oha-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* 12. COMMON BADGES */
+.oha-badge,
+.product-badge,
+.category-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    padding:
-        0 17px;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-    border: 0;
-    border-radius:
-        50px;
-    font-size: 13px;
+    gap: 5px;
+    width: fit-content;
+    max-width: 100%;
+    padding: 5px 11px;
+    color: var(--oha-green);
+    background: var(--oha-soft-green);
+    border-radius: var(--oha-radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.oha-badge-orange {
+    color: #80480a;
+    background: #fff0d8;
+}
+
+.oha-badge-red {
+    color: #9b3027;
+    background: #fde9e6;
+}
+
+/* 13. FORMS */
+.oha-form,
+.site-form {
+    width: 100%;
+}
+
+.oha-form label,
+.site-form label,
+.form-label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--oha-green-dark);
+    font-size: 0.9rem;
     font-weight: 700;
 }
-.oha-newsletter-input button:hover {
-    background:
-        var(--oha-olive);
-}
-.oha-newsletter-form small {
+
+.oha-input,
+.oha-select,
+.oha-textarea,
+.form-control-oha,
+.form-select-oha {
     display: block;
-    margin-top: 9px;
-    padding-left: 13px;
-    color:
-        rgba(255, 255, 255, 0.5);
-    font-size: 10px;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 14px;
+    color: var(--oha-text);
+    background: var(--oha-white);
+    border: 1px solid #dce2d9;
+    border-radius: var(--oha-radius-sm);
+    font-size: 16px;
+    line-height: 1.5;
+    transition:
+        border-color var(--oha-transition),
+        box-shadow var(--oha-transition);
 }
-/* =========================================================
-   MAIN FOOTER
-   ========================================================= */
-.oha-footer-main {
-    padding:
-        65px 0 50px;
-    background:
-        var(--oha-cream);
+
+.oha-textarea {
+    min-height: 120px;
+    resize: vertical;
 }
-.oha-footer-brand {
+
+.oha-input:focus,
+.oha-select:focus,
+.oha-textarea:focus,
+.form-control-oha:focus,
+.form-select-oha:focus {
+    border-color: var(--oha-olive);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(120, 155, 54, 0.14);
+}
+
+.oha-form-group {
+    margin-bottom: 18px;
+}
+
+.oha-help-text {
+    display: block;
+    margin-top: 6px;
+    color: var(--oha-muted);
+    font-size: 0.82rem;
+}
+
+.oha-error {
+    color: #b42318;
+    font-size: 0.85rem;
+}
+
+.oha-success {
+    color: var(--oha-green);
+    font-size: 0.85rem;
+}
+
+/* 14. NOTIFICATION / TOAST */
+.oha-toast,
+.site-toast,
+.toast-message {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+    z-index: 1090;
+    width: max-content;
+    max-width: min(420px, calc(100vw - 32px));
+    padding: 14px 20px;
+    color: var(--oha-white);
+    background: var(--oha-green-dark);
+    border-radius: var(--oha-radius-md);
+    box-shadow: var(--oha-shadow-lg);
+    font-size: 0.92rem;
+    overflow-wrap: anywhere;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition:
+        opacity var(--oha-transition),
+        transform var(--oha-transition),
+        visibility var(--oha-transition);
+}
+
+.oha-toast.show,
+.oha-toast.active,
+.site-toast.show,
+.site-toast.active,
+.toast-message.show,
+.toast-message.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.oha-toast.error,
+.site-toast.error {
+    background: #a92f27;
+}
+
+.oha-toast.success,
+.site-toast.success {
+    background: var(--oha-green);
+}
+
+/* 15. NEWSLETTER */
+.newsletter-section,
+.footer-newsletter,
+.oha-newsletter {
+    position: relative;
+    padding: clamp(30px, 5vw, 55px);
+    background: var(--oha-cream);
+    border-radius: var(--oha-radius-xl);
+}
+
+.newsletter-inner,
+.newsletter-content,
+.oha-newsletter-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.newsletter-title,
+.oha-newsletter-title {
+    margin-bottom: 8px;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.newsletter-form,
+.oha-newsletter-form {
+    display: flex;
+    flex: 1;
+    max-width: 520px;
+    gap: 10px;
+}
+
+.newsletter-form input,
+.oha-newsletter-form input {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 16px;
+    background: var(--oha-white);
+    border: 1px solid var(--oha-border);
+    border-radius: var(--oha-radius-pill);
+}
+
+/* 16. FOOTER */
+#site-footer {
+    margin-top: 0;
+}
+
+.site-footer,
+.oha-footer,
+.footer-main {
+    color: #dce8df;
+    background: var(--oha-green-dark);
+}
+
+.footer-main,
+.footer-content {
+    padding-block: clamp(44px, 6vw, 76px);
+}
+
+.footer-grid,
+.footer-columns,
+.oha-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.15fr;
+    gap: clamp(24px, 4vw, 52px);
+}
+
+.footer-brand,
+.footer-column {
+    min-width: 0;
+}
+
+.footer-logo,
+.site-footer .site-logo,
+.oha-footer .site-logo {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
-}
-.oha-footer-brand:hover {
-    color:
-        inherit;
-}
-.oha-footer-logo {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-    border-radius:
-        50% 50% 50% 8px;
-}
-.oha-footer-brand strong {
-    display: block;
-    color:
-        var(--oha-green-dark);
-    font-size: 21px;
-    font-weight: 800;
-    line-height: 1.1;
-}
-.oha-footer-brand small {
-    display: block;
-    margin-top: 4px;
-    color:
-        var(--oha-text-muted);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
-.oha-footer-description {
-    max-width: 370px;
-    margin-top: 20px;
-    color:
-        var(--oha-text-light);
-    font-size: 14px;
-}
-.oha-footer-social {
-    display: flex;
-    gap: 8px;
-    margin-top: 22px;
-}
-.oha-footer-social a {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:
-        var(--oha-green);
-    background:
-        var(--oha-white);
-    border:
-        1px solid var(--oha-border);
-    border-radius:
-        50%;
-}
-.oha-footer-social a:hover {
-    color:
-        var(--oha-white);
-    background:
-        var(--oha-green);
-    border-color:
-        var(--oha-green);
-    transform:
-        translateY(-2px);
-}
-/* =========================================================
-   FOOTER TITLES
-   ========================================================= */
-.oha-footer-title {
-    margin-bottom: 19px;
-    color:
-        var(--oha-green-dark);
-    font-size: 15px;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--oha-white);
+    font-size: 1.45rem;
     font-weight: 800;
 }
-/* =========================================================
-   FOOTER LINKS
-   ========================================================= */
-.oha-footer-links {
+
+.footer-logo img,
+.site-footer .site-logo img,
+.oha-footer .site-logo img {
+    max-width: 170px;
+    max-height: 52px;
+    object-fit: contain;
+}
+
+.footer-description,
+.footer-brand p {
+    max-width: 380px;
+    color: #c8d9ce;
+    font-size: 0.92rem;
+    line-height: 1.9;
+}
+
+.footer-title,
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 18px;
+    color: var(--oha-white);
+    font-size: 1.02rem;
+    font-weight: 700;
+}
+
+.footer-links,
+.footer-column ul {
+    display: grid;
+    gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.oha-footer-links li {
-    margin-bottom: 10px;
+
+.footer-links a,
+.footer-column li a {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #c8d9ce;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
 }
-.oha-footer-links a {
-    color:
-        var(--oha-text-light);
-    font-size: 13px;
+
+.footer-links a:hover,
+.footer-column li a:hover {
+    color: var(--oha-lime);
 }
-.oha-footer-links a:hover {
-    padding-left: 3px;
-    color:
-        var(--oha-green);
-}
-/* =========================================================
-   FOOTER CONTACT
-   ========================================================= */
-.oha-footer-contact {
+
+.footer-socials,
+.social-links,
+.oha-social-links {
     display: flex;
-    flex-direction: column;
-    gap: 13px;
-}
-.oha-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.oha-contact-icon {
-    width: 39px;
-    height: 39px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color:
-        var(--oha-green);
-    background:
-        var(--oha-white);
-    border:
-        1px solid var(--oha-border);
-    border-radius:
-        50%;
-}
-.oha-contact-item small {
-    display: block;
-    color:
-        var(--oha-text-muted);
-    font-size: 10px;
-    line-height: 1.3;
-}
-.oha-contact-item strong {
-    display: block;
-    margin-top: 2px;
-    color:
-        var(--oha-text);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.4;
-}
-/* =========================================================
-   FOOTER BOTTOM
-   ========================================================= */
-.oha-footer-bottom {
-    background:
-        var(--oha-green-deep);
-}
-.oha-footer-bottom-inner {
-    min-height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-.oha-copyright {
-    color:
-        rgba(255, 255, 255, 0.58);
-    font-size: 11px;
-}
-.oha-footer-policies {
-    display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 17px;
+    gap: 10px;
+    margin-top: 20px;
 }
-.oha-footer-policies a {
-    color:
-        rgba(255, 255, 255, 0.58);
-    font-size: 11px;
-}
-.oha-footer-policies a:hover {
-    color:
-        var(--oha-white);
-}
-/* =========================================================
-   COMMON BUTTONS
-   ========================================================= */
-.oha-btn {
-    min-height: 50px;
+
+.footer-socials a,
+.social-links a,
+.oha-social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
-    padding:
-        0 22px;
-    border: 0;
-    border-radius:
-        50px;
-    font-size: 14px;
-    font-weight: 700;
-    transition:
-        var(--oha-transition);
+    width: 40px;
+    height: 40px;
+    color: var(--oha-white);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    transition: var(--oha-transition);
 }
-.oha-btn-primary {
-    color:
-        var(--oha-white) !important;
-    background:
-        var(--oha-green);
-    box-shadow:
-        0 7px 18px rgba(31, 107, 63, 0.15);
+
+.footer-socials a:hover,
+.social-links a:hover,
+.oha-social-links a:hover {
+    color: var(--oha-green-dark);
+    background: var(--oha-lime);
+    transform: translateY(-2px);
 }
-.oha-btn-primary:hover {
-    color:
-        var(--oha-white) !important;
-    background:
-        var(--oha-green-dark);
-    transform:
-        translateY(-2px);
+
+.footer-bottom,
+.site-footer-bottom,
+.oha-footer-bottom {
+    padding-block: 18px;
+    color: #c8d9ce;
+    background: var(--oha-green-deep);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.82rem;
 }
-.oha-btn-secondary {
-    color:
-        var(--oha-green-dark) !important;
-    background:
-        var(--oha-white);
-    border:
-        1px solid var(--oha-border);
+
+.footer-bottom-inner,
+.oha-footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
-.oha-btn-secondary:hover {
-    color:
-        var(--oha-white) !important;
-    background:
-        var(--oha-green);
-    border-color:
-        var(--oha-green);
-    transform:
-        translateY(-2px);
+
+.footer-bottom p,
+.oha-footer-bottom p {
+    margin: 0;
 }
-/* =========================================================
-   COMMON SECTION HELPERS
-   ========================================================= */
-.oha-section {
-    padding:
-        85px 0;
+
+.footer-bottom-links,
+.oha-footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
-.oha-section-cream {
-    background:
-        var(--oha-cream);
+
+.footer-bottom-links a,
+.oha-footer-legal a {
+    color: #c8d9ce;
 }
-.oha-section-beige {
-    background:
-        var(--oha-beige);
+
+.footer-bottom-links a:hover,
+.oha-footer-legal a:hover {
+    color: var(--oha-lime);
 }
-.oha-section-header {
-    max-width: 720px;
-    margin:
-        0 auto 45px;
-    text-align: center;
+
+/* 17. COMMON ICONS AND DIVIDERS */
+.oha-icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    color: var(--oha-green);
+    background: var(--oha-soft-green);
+    border-radius: 50%;
+    font-size: 1.15rem;
 }
-.oha-section-eyebrow {
-    display: inline-block;
-    margin-bottom: 9px;
-    color:
-        var(--oha-olive);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.7px;
-    text-transform: uppercase;
-}
-.oha-section-title {
-    margin-bottom: 13px;
-    color:
-        var(--oha-green-dark);
-    font-size:
-        clamp(28px, 4vw, 42px);
-    font-weight: 800;
-    letter-spacing: -0.6px;
-}
-.oha-section-description {
-    margin: 0 auto;
-    color:
-        var(--oha-text-light);
-    font-size: 15px;
-}
-/* =========================================================
-   FORM ELEMENTS
-   ========================================================= */
-.oha-form-control {
+
+.oha-divider {
     width: 100%;
-    min-height: 48px;
-    padding:
-        10px 14px;
-    color:
-        var(--oha-text);
-    background:
-        var(--oha-white);
-    border:
-        1px solid var(--oha-border);
-    border-radius:
-        var(--oha-radius-sm);
-    outline: none;
+    height: 1px;
+    margin-block: 22px;
+    background: var(--oha-border);
 }
-.oha-form-control:focus {
-    border-color:
-        var(--oha-green);
-    box-shadow:
-        0 0 0 3px rgba(31, 107, 63, 0.08);
+
+/* 18. ACCESSIBILITY AND MOTION */
+.visually-hidden,
+.oha-visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
-/* =========================================================
-   RESPONSIVE — LARGE TABLETS
-   ========================================================= */
-@media (max-width: 1199.98px) {
-    :root {
-        --oha-container-width: 1140px;
-    }
-    .oha-main-menu {
-        gap: 0;
-    }
-    .oha-nav-link {
-        padding-left: 11px !important;
-        padding-right: 11px !important;
-    }
-    .oha-header-cta {
-        padding-left: 13px;
-        padding-right: 13px;
-    }
-}
-/* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
-@media (max-width: 991.98px) {
-    .oha-navbar {
-        min-height: 72px;
-    }
-    .oha-navbar .container {
-        min-height: 72px;
-    }
-    .oha-navbar-toggler {
-        display: inline-flex;
-    }
-    #ohaDesktopNavigation {
-        display: none !important;
-    }
-    .oha-brand-text small {
-        display: none;
-    }
-    .oha-topbar-right {
-        display: none;
-    }
-    .oha-topbar-inner {
-        justify-content: center;
-    }
-    .oha-footer-newsletter {
-        padding-top: 55px;
-    }
-    .oha-newsletter-box {
-        padding:
-            35px 30px;
-    }
-    .oha-footer-main {
-        padding-top: 55px;
-    }
-}
-/* =========================================================
-   RESPONSIVE — MOBILE
-   ========================================================= */
-@media (max-width: 767.98px) {
-    .container {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-    .oha-topbar {
-        font-size: 11px;
-    }
-    .oha-topbar-inner {
-        min-height: 34px;
-    }
-    .oha-brand-icon {
-        width: 39px;
-        height: 39px;
-    }
-    .oha-brand-text strong {
-        font-size: 19px;
-    }
-    .oha-navbar-toggler {
-        width: 41px;
-        height: 41px;
-    }
-    .oha-search-overlay {
-        padding:
-            75px 12px 25px;
-    }
-    .oha-search-box {
-        padding:
-            30px 18px 24px;
-        border-radius:
-            22px;
-    }
-    .oha-search-close {
-        top: 13px;
-        right: 13px;
-    }
-    .oha-search-form input {
-        height: 52px;
-    }
-    .oha-search-form button {
-        width: 52px;
-        height: 52px;
-    }
-    .oha-newsletter-box {
-        padding:
-            30px 22px;
-        border-radius:
-            22px;
-    }
-    .oha-newsletter-box h2 {
-        font-size: 27px;
-    }
-    .oha-newsletter-input {
-        padding: 4px;
-    }
-    .oha-newsletter-input input {
-        width: 100%;
-        font-size: 12px;
-    }
-    .oha-newsletter-input button {
-        padding:
-            0 13px;
-        font-size: 11px;
-    }
-    .oha-footer-main {
-        padding:
-            50px 0 40px;
-    }
-    .oha-footer-description {
-        font-size: 13px;
-    }
-    .oha-footer-bottom-inner {
-        min-height: auto;
-        padding:
-            18px 0;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .oha-footer-policies {
-        justify-content: flex-start;
-        gap: 9px 15px;
-    }
-    .oha-footer-policies a {
-        font-size: 10px;
-    }
-    .oha-app-message {
-        right: 12px;
-        bottom: 12px;
-        max-width:
-            calc(100vw - 24px);
-    }
-    .oha-section {
-        padding:
-            60px 0;
-    }
-    .oha-section-header {
-        margin-bottom: 32px;
-    }
-}
-/* =========================================================
-   RESPONSIVE — SMALL MOBILE
-   ========================================================= */
-@media (max-width: 479.98px) {
-    .oha-topbar-left span {
-        font-size: 10px;
-    }
-    .oha-brand-icon {
-        width: 36px;
-        height: 36px;
-    }
-    .oha-brand-text strong {
-        font-size: 18px;
-    }
-    .oha-mobile-menu {
-        width: 100%;
-    }
-    .oha-search-suggestions {
-        align-items: flex-start;
-    }
-    .oha-newsletter-input {
-        display: flex;
-        flex-wrap: wrap;
-        min-height: auto;
-        padding:
-            8px;
-        border-radius:
-            18px;
-    }
-    .oha-newsletter-input > i {
-        margin-left: 8px;
-    }
-    .oha-newsletter-input input {
-        width:
-            calc(100% - 35px);
-        flex: 1;
-    }
-    .oha-newsletter-input button {
-        width: 100%;
-        margin-top: 5px;
-    }
-    .oha-footer-social {
-        margin-bottom: 10px;
-    }
-}
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-:focus-visible {
-    outline:
-        3px solid rgba(31, 107, 63, 0.28);
-    outline-offset:
-        2px;
-}
+
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior:
-            auto;
-    }
     *,
     *::before,
     *::after {
-        animation-duration:
-            0.01ms !important;
-        animation-iteration-count:
-            1 !important;
-        transition-duration:
-            0.01ms !important;
-        scroll-behavior:
-            auto !important;
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 19. LARGE TABLETS AND SMALL LAPTOPS */
+@media (max-width: 1199.98px) {
+    :root {
+        --oha-container: 1080px;
+        --oha-header-height: 70px;
+    }
+
+    .site-nav,
+    .main-navigation,
+    .desktop-navigation {
+        gap: 16px;
+    }
+
+    .site-nav a,
+    .main-navigation a,
+    .desktop-navigation a {
+        font-size: 0.88rem;
+    }
+
+    .footer-grid,
+    .footer-columns,
+    .oha-footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+/* 20. TABLETS */
+@media (max-width: 991.98px) {
+    .oha-container,
+    .site-container {
+        width: min(calc(100% - 36px), var(--oha-container));
+    }
+
+    :root {
+        --oha-header-height: 66px;
+    }
+
+    .site-nav,
+    .main-navigation,
+    .desktop-navigation {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: inline-flex;
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    .header-main,
+    .header-inner,
+    .navbar-inner,
+    .oha-header-inner {
+        gap: 12px;
+    }
+
+    .site-logo,
+    .header-logo,
+    .oha-logo,
+    .brand-logo {
+        font-size: 1.35rem;
+    }
+
+    .site-logo img,
+    .header-logo img,
+    .oha-logo img,
+    .brand-logo img {
+        max-width: 150px;
+        max-height: 48px;
+    }
+
+    .newsletter-inner,
+    .newsletter-content,
+    .oha-newsletter-inner {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .newsletter-form,
+    .oha-newsletter-form {
+        width: 100%;
+        max-width: none;
+    }
+
+    .footer-grid,
+    .footer-columns,
+    .oha-footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+}
+
+/* 21. MOBILE PHONES */
+@media (max-width: 767.98px) {
+    body {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .oha-container,
+    .site-container {
+        width: calc(100% - 32px);
+    }
+
+    .oha-section {
+        padding-block: 48px;
+    }
+
+    .oha-section-sm {
+        padding-block: 32px;
+    }
+
+    .oha-section-heading {
+        margin-bottom: 25px;
+    }
+
+    .oha-section-title {
+        margin-bottom: 10px;
+    }
+
+    .topbar,
+    .site-topbar,
+    .announcement-bar {
+        padding: 7px 12px;
+        font-size: 0.74rem;
+        line-height: 1.5;
+    }
+
+    .header-main,
+    .header-inner,
+    .navbar-inner,
+    .oha-header-inner {
+        min-height: 64px;
+    }
+
+    .site-logo,
+    .header-logo,
+    .oha-logo,
+    .brand-logo {
+        gap: 7px;
+        font-size: 1.22rem;
+    }
+
+    .site-logo img,
+    .header-logo img,
+    .oha-logo img,
+    .brand-logo img {
+        max-width: 128px;
+        max-height: 42px;
+    }
+
+    .header-actions,
+    .header-tools,
+    .nav-actions {
+        gap: 3px;
+    }
+
+    .header-icon-btn,
+    .search-toggle,
+    .cart-toggle,
+    .mobile-menu-toggle,
+    .header-action-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.05rem;
+    }
+
+    .newsletter-section,
+    .footer-newsletter,
+    .oha-newsletter {
+        padding: 25px 18px;
+        border-radius: var(--oha-radius-lg);
+    }
+
+    .newsletter-form,
+    .oha-newsletter-form,
+    .search-form,
+    .oha-search-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button,
+    .oha-newsletter-form button,
+    .search-form button,
+    .oha-search-form button {
+        width: 100%;
+    }
+
+    .footer-main,
+    .footer-content {
+        padding-block: 42px;
+    }
+
+    .footer-grid,
+    .footer-columns,
+    .oha-footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom-inner,
+    .oha-footer-bottom-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-bottom-links,
+    .oha-footer-legal {
+        gap: 10px 16px;
+    }
+
+    .mobile-nav,
+    .mobile-menu,
+    .oha-mobile-menu {
+        padding: 20px;
+    }
+
+    .search-overlay,
+    .site-search-overlay,
+    .oha-search-overlay {
+        padding: 18px 12px;
+    }
+
+    .search-panel,
+    .search-overlay-content,
+    .oha-search-panel {
+        padding: 20px 16px;
+        border-radius: var(--oha-radius-md);
+    }
+
+    .oha-btn,
+    .btn-oha,
+    .btn-oha-primary,
+    .btn-oha-outline,
+    .btn-oha-light {
+        min-height: 46px;
+        padding: 11px 18px;
+    }
+
+    .oha-toast,
+    .site-toast,
+    .toast-message {
+        right: 12px;
+        bottom: 12px;
+        max-width: calc(100vw - 24px);
+    }
+}
+
+/* 22. SMALL PHONES */
+@media (max-width: 479.98px) {
+    .oha-container,
+    .site-container {
+        width: calc(100% - 24px);
+    }
+
+    .oha-section {
+        padding-block: 38px;
+    }
+
+    .oha-section-sm {
+        padding-block: 26px;
+    }
+
+    .site-logo,
+    .header-logo,
+    .oha-logo,
+    .brand-logo {
+        font-size: 1.08rem;
+    }
+
+    .site-logo img,
+    .header-logo img,
+    .oha-logo img,
+    .brand-logo img {
+        max-width: 108px;
+        max-height: 38px;
+    }
+
+    .header-actions,
+    .header-tools,
+    .nav-actions {
+        gap: 0;
+    }
+
+    .header-icon-btn,
+    .search-toggle,
+    .cart-toggle,
+    .mobile-menu-toggle,
+    .header-action-btn {
+        width: 36px;
+        height: 38px;
+        font-size: 0.98rem;
+    }
+
+    .cart-count,
+    .cart-badge,
+    .header-cart-count {
+        top: -1px;
+        right: -1px;
+        min-width: 17px;
+        height: 17px;
+        font-size: 0.6rem;
+    }
+
+    .oha-section-title {
+        font-size: 1.55rem;
+    }
+
+    .oha-section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .newsletter-section,
+    .footer-newsletter,
+    .oha-newsletter {
+        padding: 22px 15px;
+    }
+
+    .footer-bottom,
+    .site-footer-bottom,
+    .oha-footer-bottom {
+        font-size: 0.77rem;
+    }
+}
+
+/* 23. EXTRA-SMALL SCREENS */
+@media (max-width: 359.98px) {
+    .oha-container,
+    .site-container {
+        width: calc(100% - 20px);
+    }
+
+    .site-logo,
+    .header-logo,
+    .oha-logo,
+    .brand-logo {
+        font-size: 1rem;
+    }
+
+    .site-logo img,
+    .header-logo img,
+    .oha-logo img,
+    .brand-logo img {
+        max-width: 92px;
+    }
+
+    .header-icon-btn,
+    .search-toggle,
+    .cart-toggle,
+    .mobile-menu-toggle,
+    .header-action-btn {
+        width: 33px;
+        height: 36px;
+    }
+}
+
+/* 24. LANDSCAPE PHONES */
+@media (max-height: 500px) and (orientation: landscape) {
+    .mobile-nav,
+    .mobile-menu,
+    .oha-mobile-menu {
+        padding-block: 14px;
+    }
+
+    .mobile-nav-header,
+    .mobile-menu-header,
+    .oha-mobile-menu-header {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+
+    .mobile-nav-links a,
+    .mobile-menu-links a,
+    .oha-mobile-links a {
+        min-height: 40px;
+    }
+}
+
+/* 25. PRINT */
+@media print {
+    .topbar,
+    .site-topbar,
+    .announcement-bar,
+    #site-header,
+    #site-footer,
+    .mobile-menu-toggle,
+    .header-actions,
+    .search-overlay,
+    .site-search-overlay,
+    .oha-search-overlay,
+    .oha-toast,
+    .site-toast,
+    .toast-message {
+        display: none !important;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+        font-size: 12pt;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .oha-card,
+    .site-card {
+        box-shadow: none;
+        break-inside: avoid;
     }
 }
